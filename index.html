@@ -17,7 +17,7 @@
     <body class="h-screen overflow-x-hidden w-lvw">
         <head>
             <nav
-                class=" text-[#6a994e] font-bold text-xl flex justify-center gap-20 justify-items-center ">
+                class=" text-[#6a994e] font-bold text-xl flex justify-center md:gap-10 gap-20 justify-items-center ">
 
                 <div class="p-4 mr-40 rounded-full ">
                     <img src="img/logo4.png" alt="logo"
@@ -32,9 +32,27 @@
             </nav>
 
             <!-- menu movil -->
-            <div class="flex justify-end mr-10">
+            <div id="menu" class="flex justify-end mr-10">
                 <img src="img/menu.png" alt="menu.movil"
                     class="w-8 py-2 sm:hidden">
+            </div>
+            <div id="cerrar" class="hidden">
+                <div class="flex justify-end mr-10 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                    height="40px" viewBox="0 -960 960 960" 
+                    width="40px" fill="#000000">
+                    <path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"/></svg>
+                </div>
+            </div>
+
+            <div id="menu_movil" class="hidden bg-white  w-full">
+                <nav> 
+                    <div class="  flex flex-col text-center text-[#6a994e] font-bold gap-10 pb-20">
+                        <a href="#nosotros">Nosotros</a>
+                        <a href="#productos">Nuestros Productos</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>  
+                </nav>
             </div>
             <!-- menu movil -->
 
@@ -65,16 +83,16 @@
         <main>
 
             <!-- Nosostros -->
-            <section id="nosotros" class="flex flex-wrap ">
-                <div class="ml-0 sm:mx-auto md:ml-40">
-                    <img src="img/img/cuerda4.jpg" alt="imagen-principal"
-                        class=" h-[30rem] rounded-md">
+            <section id="nosotros" class="flex jus flex-wrap ">
+                <div class="ml-0 sm:mx-auto xl:ml-40">
+                    <img  src="img/img/cuerda4.jpg" alt="imagen-principal"
+                        class=" h-[20rem] rounded-md">
                 </div>
                 <div class="items-center max-w-2xl mx-auto my-auto">
                     <h2
                         class="text-4xl md:text-7xl capitalize libre-baskerville-bold text-[#6a994e] text-center mt-5">sobre
                         nosotros</h2>
-                    <h3 class="mx-4 mt-2 text-xl text-start md:text-xl">
+                    <h3 class="mx-4 mt-2 text-md text-center md:text-start md:text-xl">
                         En nuestra empresa, somos fabricantes especializados en
                         soluciones de transporte aéreo para el sector
                         hortofrutícola. Con una amplia experiencia en la
@@ -267,3 +285,22 @@
 
     </body>
 </html>
+
+<script>
+    const boton = document.getElementById('menu');
+    const menu = document.getElementById('menu_movil');
+    const cerrar = document.getElementById('cerrar');
+
+    boton.addEventListener('click', function(){
+        menu.classList.remove('hidden');
+        boton.classList.add('hidden');
+        cerrar.classList.remove('hidden');
+    });
+
+    cerrar.addEventListener('click', function(){
+        menu.classList.add('hidden');
+        boton.classList.remove('hidden');
+        cerrar.classList.add('hidden');
+    });
+    
+</script>
